@@ -60,3 +60,13 @@ app.post('/api/send-email', (req, res) => {
     });
 });
 
+const server = app.listen(PORT, () => {
+    console.log(`Server running on port  ${PORT} : ${process.env.NODE_ENV}`);
+});
+
+process.on("unhandledRejection", (err, promise) => {
+    console.log(`Logged Error : ${err}`);
+    server.close(() => process.exit(1));
+});
+
+
