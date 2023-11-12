@@ -22,3 +22,41 @@ app.use(customErrorHandler);
 
 const PORT = process.env.PORT || 5000;
 app.use(express.static(path.join(__dirname, "public")));
+const nodemailer = require('nodemailer');
+
+app.post('/api/send-email', (req, res) => {
+    const { name, email, message } = req.body;
+
+    // Create a nodemailer transporter with your email service provider details
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'coolcoder201@gmail.com',
+            pass: '123123123',
+        },
+    });
+
+    // Define the email options
+    const mailOptions = {
+        from: email,
+        to: "coolcoder201@gmail.com",
+        subject: 'Dog Care',
+        text: `
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
+      `,
+    };
+
+    // Send the email
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Failed to send email' });
+        } else {
+            console.log('Email sent:', info.response);
+            res.status(200).json({ message: 'Email sent successfully' });
+        }
+    });
+});
+
