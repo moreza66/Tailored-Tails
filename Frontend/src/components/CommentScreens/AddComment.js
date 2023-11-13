@@ -21,4 +21,7 @@ const AddComment = ({ setSidebarShowStatus, slug, getStoryComments, activeUser, 
     useEffect(() => {
         // useEffect content here
     }, [slug, setLoading]);
+    const handleSubmit = async (e) => {
+        // handleSubmit content here
+    };
 
