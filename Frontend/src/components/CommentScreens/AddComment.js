@@ -24,4 +24,8 @@ const AddComment = ({ setSidebarShowStatus, slug, getStoryComments, activeUser, 
     const handleSubmit = async (e) => {
         // handleSubmit content here
     };
+    return (
+        // JSX content here
+    );
+    export default AddComment;
 
