@@ -14,3 +14,10 @@ const Header = () => {
 }
 
 export default Header;
+
+    // Continuing from Part 1...
+    const bool = localStorage.getItem("authToken") ? true : false
+    const [auth, setAuth] = useState(bool)
+    const { activeUser } = useContext(AuthContext)
+    const [loading, setLoading] = useState(true)
+    // Rest of the code in subsequent commits...
