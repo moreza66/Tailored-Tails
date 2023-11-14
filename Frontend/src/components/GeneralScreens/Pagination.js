@@ -8,3 +8,6 @@ const Pagination = ({ page, pages, changePage }) => {
     }
     // (Keep only the function definition and initialization of variables here)
   };
+  if (pages <= 5) {
+    // Logic for less than 5 pages
+  }
