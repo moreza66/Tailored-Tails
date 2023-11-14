@@ -27,3 +27,8 @@ const Home = () => {
     // Second useEffect logic here
   }, [searchKey]);
   
+  return (
+    // JSX rendering logic here
+  );
+  export default Home;
+  
