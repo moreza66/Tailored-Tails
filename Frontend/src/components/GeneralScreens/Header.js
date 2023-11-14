@@ -10,31 +10,92 @@ import SkeletonElement from '../Skeletons/SkeletonElement';
 import { AuthContext } from '../../Context/AuthContext';
 
 const Header = () => {
-    // Remaining parts will be committed in subsequent commits...
-}
-
-export default Header;
-
-    // Continuing from Part 1...
     const bool = localStorage.getItem("authToken") ? true : false
     const [auth, setAuth] = useState(bool)
     const { activeUser } = useContext(AuthContext)
     const [loading, setLoading] = useState(true)
-    // Rest of the code in subsequent commits...
+    const navigate = useNavigate()
 
-        // Continuing from Part 2...
-        const navigate = useNavigate()
+    useEffect(() => {
 
-        useEffect(() => {
-            // useEffect implementation...
-        }, [bool])
-    
-        const handleLogout = () => {
-            // Logout function implementation...
-        };
-        // Remaining JSX in the next commit...
+        setAuth(bool)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1600)
 
-            // Continuing from Part 3...
+    }, [bool])
+
+
+    const handleLogout = () => {
+        localStorage.removeItem("authToken");
+        navigate('/')
+    };
+
     return (
-        // JSX structure...
-    );
+
+        <header>
+            <div className="averager">
+
+                <Link to="/" className="logo">
+                    <img src="./logo.png" alt="DOG CARE Logo" />
+                </Link>
+                <SearchForm />
+                <div className='header_options'>
+
+                    {auth ?
+                        <div className="auth_options">
+
+
+                            <Link className='addStory-link' to="/addstory"><RiPencilFill /> Add Dog </Link>
+
+
+                            <Link to="/readList" className='readList-link'>
+                                <BsBookmarks />
+                                <span id="readListLength">
+                                    {activeUser.readListLength}
+                                </span>
+                            </Link>
+                            <Link className='addStory-link' to="/contactus"><RiPencilFill /> Contact Us </Link>
+                            <div className='header-profile-wrapper '>
+
+
+                                {loading ? <SkeletonElement type="minsize-avatar" />
+
+                                    :
+
+                                    <img src={`/userPhotos/${activeUser.photo}`} alt={activeUser.username} />
+
+                                }
+
+
+                                <div className="sub-profile-wrap  ">
+                                    <Link className='profile-link' to="/profile"  > <FaUserEdit />  Profile </Link>
+
+                                    <button className='logout-btn' onClick={handleLogout}> <BiLogOut />  Logout</button>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        :
+                        <div className="noAuth_options">
+
+                            <Link className='login-link' to="/login"> Login </Link>
+
+                            <Link className='register-link' to="/register"> Get Started</Link>
+                        </div>
+
+                    }
+                </div>
+
+            </div>
+
+        </header>
+
+    )
+}
+
+export default Header;
