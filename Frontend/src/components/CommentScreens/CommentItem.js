@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const CommentItem = ({ comment, activeUser }) => {
-    // Rest of the code will go in the following parts...
    // Continuing from Part 1...
    const navigate = useNavigate();
    const [likeCount, setLikeCount] = useState(comment.likeCount);
@@ -15,3 +14,11 @@ const CommentItem = ({ comment, activeUser }) => {
    useEffect(() => {
        // The function and its contents...
    }, []);
+       // Continuing from Part 2...
+       const editDate = (createdAt) => {
+        // Function implementation...
+    };
+
+    const handleCommentLike = async () => {
+        // Function implementation...
+    };
