@@ -6,3 +6,11 @@ const SearchForm = () => {
     const navigate = useNavigate();
   
 };
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (searchTerm) {
+        navigate(`/?search=${searchTerm}`);
+    }
+    setSearchTerm("");
+};
