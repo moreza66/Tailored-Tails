@@ -14,3 +14,10 @@ const handleSubmit = async (e) => {
     }
     setSearchTerm("");
 };
+
+return (
+    <form className="search-form" onSubmit={handleSubmit}>
+        // ... (rest of the form JSX)
+    </form>
+);
+export default SearchForm;
