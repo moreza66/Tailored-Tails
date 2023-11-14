@@ -18,3 +18,12 @@ const Home = () => {
   
     // ... (rest of the useEffect hooks and component logic)
   };
+
+  useEffect(() => {
+    // First useEffect logic here
+  }, [setLoading, search, page, navigate]);
+  
+  useEffect(() => {
+    // Second useEffect logic here
+  }, [searchKey]);
+  
