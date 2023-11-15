@@ -27,3 +27,8 @@ const clearInputs = () => {
     editorEl.current.editor.setData('');
     imageEl.current.value = "";
 }
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+
+}
