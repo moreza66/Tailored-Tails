@@ -41,3 +41,67 @@ const Profile = () => {
 
         getUserProfile()
     }, [setLoading])
+    return (
+        <>
+            {
+                loading ? <Loader /> :
+                    <div className="Inclusive_profile_page">
+                        <Link to={'/'} >
+                            <FiArrowLeft />
+                        </Link>
+                        <div className="profile-top-wrap">
+
+                            <span>
+                                Membership Information
+                            </span>
+
+                            <a href="#!">Close  Account</a>
+                        </div>
+                        <ul>
+
+                            <li>
+                                <span>
+                                    Username
+                                </span>
+                                <div>
+                                    {user.username}
+                                </div>
+                            </li>
+                            <li>
+                                <span>E-Mail</span>
+                                <div>
+                                    {user.email}
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <span> Account Created Date </span>
+                                <div>
+                                    {editDate(user.createdAt)}
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div className='btns_wrap'>
+                            <button className='profileEditBtn'>
+                                <Link to="/edit_profile">
+                                    Edit Profile
+                                </Link>
+                            </button>
+                            <button className='changePassBtn'>
+                                <Link to="/change_password">
+                                    Change Password
+                                </Link>
+                            </button>
+                        </div>
+                    </div>
+            }
+
+        </>
+
+    )
+}
+
+export default Profile;
