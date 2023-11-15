@@ -3,6 +3,7 @@ import {Outlet, useNavigate} from 'react-router-dom'
 import Home from '../GeneralScreens/Home';
 import axios from 'axios';
 import { AuthContext } from "../../Context/AuthContext";
+
 const PrivateRoute =( ) => {
     const bool =localStorage.getItem("authToken") ? true :false
     const [auth ,setAuth] =useState(bool)
@@ -42,3 +43,9 @@ const PrivateRoute =( ) => {
 
         controlAuth()
     }, [bool,navigate])
+
+
+    return (auth ? <Outlet />  : <Home error={error} />)
+}
+
+export default PrivateRoute;
