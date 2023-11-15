@@ -9,6 +9,7 @@ import { BsThreeDots } from 'react-icons/bs'
 import ReadListStoryItem from '../StoryScreens/ReadListStoryItem';
 
 import '../../Css/ReadListPage.css'
+
 const ReadListPage = () => {
     const navigate = useNavigate();
     const [readList, setReadList] = useState([])
@@ -32,6 +33,8 @@ const ReadListPage = () => {
 
 
     }, [])
+
+
     const editDate = (createdAt) => {
 
         const d = new Date(createdAt);
@@ -39,3 +42,78 @@ const ReadListPage = () => {
         return datestring
     }
 
+
+    return (
+        <>
+            {loading ? <Loader /> :
+
+                <div className="Inclusive-readList-page">
+                    <Link to={'/'} >
+                        <FiArrowLeft />
+                    </Link>
+                    <h2>Reading List </h2>
+
+                    <div className="readList-top-block">
+
+                        <img src={`/userPhotos/${activeUser.photo}`} alt={activeUser.username} />
+
+
+                        <div className='activeUser-info-wrapper'>
+
+                            <b>
+                                {activeUser.username}
+                            </b>
+
+                            <div>
+                                <span>
+                                    {editDate(Date.now())}
+                                </span>
+                                <span>-</span>
+                                <span>
+                                    {activeUser.readListLength} stories
+                                </span>
+                                <i>
+                                    <AiFillLock />
+                                </i>
+                            </div>
+
+                        </div>
+
+                        <i className='BsThreeDots-icon'>
+                            < BsThreeDots />
+                        </i>
+
+                    </div>
+
+                    <div className="readList-story-wrapper">
+
+                        {readList.length !== 0 ?
+                            <>
+                                {readList.map(story => {
+                                    return (
+                                        <ReadListStoryItem key={story._id} story={story} editDate={editDate} />
+
+                                    )
+                                })}
+                            </>
+
+                            :
+
+                            <div className="empty-readList">
+
+                                Reading List is empty
+
+                            </div>
+                        }
+
+
+                    </div>
+
+                </div>
+            }
+        </>
+
+    )
+}
+
+export default ReadListPage
