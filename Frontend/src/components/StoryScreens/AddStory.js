@@ -20,3 +20,10 @@ const AddStory = () => {
        const [error, setError] = useState('');
    
 }
+const clearInputs = () => {
+    setTitle('');
+    setContent('');
+    setImage('');
+    editorEl.current.editor.setData('');
+    imageEl.current.value = "";
+}
