@@ -9,3 +9,26 @@ import { BsThreeDots } from 'react-icons/bs'
 import ReadListStoryItem from '../StoryScreens/ReadListStoryItem';
 
 import '../../Css/ReadListPage.css'
+const ReadListPage = () => {
+    const navigate = useNavigate();
+    const [readList, setReadList] = useState([])
+    const [loading, setLoading] = useState(false)
+    const { config, activeUser } = useContext(AuthContext)
+
+    useEffect(() => {
+        const getUserReadingList = async () => {
+            setLoading(true)
+
+            try {
+                const { data } = await (await axios.get(`/user/readList`, config)).data
+                setReadList(data)
+                setLoading(false)
+            }
+            catch (error) {
+                navigate("/")
+            }
+        }
+        getUserReadingList()
+
+
+    }, [])
