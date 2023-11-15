@@ -21,3 +21,23 @@ const Profile = () => {
     }
 
     const navigate = useNavigate()
+    useEffect(() => {
+
+        const getUserProfile = async () => {
+
+            setLoading(true)
+
+            try {
+                const { data } = await axios.get("/user/profile", config)
+
+                setUser(data.data)
+
+                setLoading(false)
+            }
+            catch (error) {
+                navigate('/')
+            }
+        }
+
+        getUserProfile()
+    }, [setLoading])
