@@ -15,4 +15,4 @@ const EditProfile = () => {
     const [photo, setPhoto] = useState('')
     const [previousPhoto, setPreviousPhoto] = useState('')
     const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
+    // const [success, setSuccess] = useState('')
