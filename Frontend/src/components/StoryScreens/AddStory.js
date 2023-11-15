@@ -9,5 +9,14 @@ import { FiArrowLeft } from 'react-icons/fi';
 import '../../Css/AddStory.css';
 
 const AddStory = () => {
-    // Further code will be added in subsequent commits...
+       
+       const { config } = useContext(AuthContext);
+       const imageEl = useRef(null);
+       const editorEl = useRef(null);
+       const [image, setImage] = useState('');
+       const [title, setTitle] = useState('');
+       const [content, setContent] = useState('');
+       const [success, setSuccess] = useState('');
+       const [error, setError] = useState('');
+   
 }
