@@ -32,3 +32,10 @@ const ReadListPage = () => {
 
 
     }, [])
+    const editDate = (createdAt) => {
+
+        const d = new Date(createdAt);
+        var datestring = d.toLocaleString('eng', { month: 'long' }).substring(0, 3) + "  " + d.getDate()
+        return datestring
+    }
+
