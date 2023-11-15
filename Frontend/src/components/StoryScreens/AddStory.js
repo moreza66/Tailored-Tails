@@ -32,3 +32,9 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 
 }
+return (
+    <div className="Inclusive-addStory-page ">
+        // JSX structure for the form...
+        // Further code to be added in the final commit...
+    </div>
+);
