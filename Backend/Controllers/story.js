@@ -33,6 +33,27 @@ const getAllStories = asyncErrorWrapper(async (req, res, next) => {
 const detailStory = asyncErrorWrapper(async (req, res, next) => {
     // ... existing code for detailStory
 });
+const likeStory = asyncErrorWrapper(async (req, res, next) => {
+    // ... existing code for likeStory
+});
+
+const editStoryPage = asyncErrorWrapper(async (req, res, next) => {
+    // ... existing code for editStoryPage
+});
+
+const editStory = asyncErrorWrapper(async (req, res, next) => {
+    // ... existing code for editStory
+});
+
+module.exports = {
+    addStory,
+    getAllStories,
+    detailStory,
+    likeStory,
+    editStoryPage,
+    editStory,
+    // other exports...
+};
 
 module.exports = {
     addStory,
