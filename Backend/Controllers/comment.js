@@ -14,6 +14,16 @@ const addNewCommentToStory = asyncErrorWrapper(async (req, res, next) => {
     module.exports = {
         getAllCommentByStory,
     };
+    const asyncErrorWrapper = require("express-async-handler");
+const Comment = require("../Models/comment");
+
+const commentLike = asyncErrorWrapper(async (req, res, next) => {
+    // ... existing code for commentLike
+});
+
+module.exports = {
+    commentLike,
+};
     
     
 });
