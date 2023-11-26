@@ -14,6 +14,13 @@ dotenv.config({
 connectDatabase()
 
 const app = express();
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel1.app"],
+        methods:["POST", "GET"],
+        credentials:true
+    }
+));
 const nodemailer = require('nodemailer');
 app.use(express.json())
 app.use(cors())
