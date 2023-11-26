@@ -21,6 +21,7 @@ const Profile = () => {
     }
 
     const navigate = useNavigate()
+
     useEffect(() => {
 
         const getUserProfile = async () => {
@@ -41,6 +42,9 @@ const Profile = () => {
 
         getUserProfile()
     }, [setLoading])
+
+
+
     return (
         <>
             {

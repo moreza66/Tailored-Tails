@@ -1,9 +1,9 @@
 // storyMiddleware.js
-const asyncErrorWrapper = require("../../../express-async-handler");
-const CustomError = require("../../../error/CustomError");
-const StoryModel = require("../../../Models/story");
+const asyncErrorWrapper = require('express-async-handler');
+const CustomError = require("../../../Backend/Helpers/error/CustomError");
+const StoryModel = require("../../../Backend/Models/story");
 
-const ensureStoryExist = asyncErrorWrapper(async (req, res, next) => {
+const checkStoryExist = asyncErrorWrapper(async (req, res, next) => {
     const { slug } = req.params;
     const story = await StoryModel.findOne({
         slug: slug,
@@ -16,7 +16,7 @@ const ensureStoryExist = asyncErrorWrapper(async (req, res, next) => {
     next();
 });
 
-const ensureUserAndStoryExist = asyncErrorWrapper(async (req, res, next) => {
+const checkUserAndStoryExist = asyncErrorWrapper(async (req, res, next) => {
     const { slug } = req.params;
 
     const story = await StoryModel.findOne({
@@ -32,6 +32,6 @@ const ensureUserAndStoryExist = asyncErrorWrapper(async (req, res, next) => {
 });
 
 module.exports = {
-    ensureStoryExist,
-    ensureUserAndStoryExist,
+    checkStoryExist,
+    checkUserAndStoryExist,
 };
