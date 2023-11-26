@@ -16,9 +16,9 @@ connectDatabase()
 const app = express();
 app.use(cors(
     {
-        origin: ["https://deploy-mern-1whq.vercel1.app"],
+        origin: ["https://tailored-tails-frontend.vercel.app/"],
         methods:["POST", "GET"],
-        credentials:true
+        credentials: true
     }
 ));
 const nodemailer = require('nodemailer');
