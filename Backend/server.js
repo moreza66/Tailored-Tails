@@ -16,7 +16,7 @@ connectDatabase()
 const app = express();
 app.use(cors(
     {
-        origin: ["https://tailored-tails-frontend.vercel.app/"],
+        origin: ["https://tailored-tails-frontend.vercel.app"],
         methods:["POST", "GET"],
         credentials: true
     }
