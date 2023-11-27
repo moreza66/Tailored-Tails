@@ -14,13 +14,13 @@ dotenv.config({
 connectDatabase()
 
 const app = express();
-app.use(cors(
-    {
-        origin: ["https://tailored-tails-frontend.vercel.app"],
-        methods:["POST", "GET"],
-        credentials: true
-    }
-));
+// app.use(cors(
+//     {
+//         origin: ["https://tailored-tails-frontend.vercel.app"],
+//         methods:["POST", "GET"],
+//         credentials: true
+//     }
+// ));
 const nodemailer = require('nodemailer');
 app.use(express.json())
 app.use(cors())
