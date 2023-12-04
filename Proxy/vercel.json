@@ -1,8 +1,8 @@
 {
     "rewrites": [
-      {"source": "/story/", "destination": "https://tailored-tails-j1ax.vercel.app/story/"},
-      {"source": "/user/", "destination": "https://tailored-tails-j1ax.vercel.app/user/"},
-      {"source": "/auth/", "destination": "https://tailored-tails-j1ax.vercel.app/auth/"},
-      {"source": "/", "destination": "https://tailored-tails-zc7w.vercel.app/"}
+      {"source": "/story/:match*", "destination": "https://tailored-tails-j1ax.vercel.app/story/:match*"},
+      {"source": "/user/:match*", "destination": "https://tailored-tails-j1ax.vercel.app/user/:match*"},
+      {"source": "/auth/:match*", "destination": "https://tailored-tails-j1ax.vercel.app/auth/:match*"},
+      {"source": "/:match*", "destination": "https://tailored-tails-zc7w.vercel.app/:match*"}
     ]
   }
