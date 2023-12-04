@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {"source": "/story/", "destination": "https://tailored-tails-j1ax.vercel.app/story/"},
+      {"source": "/user/", "destination": "https://tailored-tails-j1ax.vercel.app/user/"},
+      {"source": "/auth/", "destination": "https://tailored-tails-j1ax.vercel.app/auth/"},
+      {"source": "/", "destination": "https://tailored-tails-zc7w.vercel.app/"}
+    ]
+  }
