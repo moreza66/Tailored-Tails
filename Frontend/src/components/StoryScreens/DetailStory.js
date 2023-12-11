@@ -28,7 +28,7 @@ const DetailStory = () => {
       setLoading(true)
       var activeUser = {}
       try {
-        const { data } = await axios.get("/auth/private", {
+        const { data } = await axios.get("/api/auth/private", {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
