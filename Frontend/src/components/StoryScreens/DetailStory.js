@@ -23,8 +23,9 @@ const DetailStory = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-
+   
     const getDetailStory = async () => {
+      console.log("inside of function 1 ***");
       setLoading(true)
       var activeUser = {}
       try {
@@ -44,13 +45,13 @@ const DetailStory = () => {
       }
 
       try {
-        const { data } = await axios.post(`/story/${slug}`, { activeUser })
+        const { data } = await axios.post(`/api/story/${slug}`, { activeUser })
         setStory(data.data)
         setLikeStatus(data.likeStatus)
         setLikeCount(data.data.likeCount)
         setStoryLikeUser(data.data.likes)
         setLoading(false)
-
+    
         const story_id = data.data._id;
 
         if (activeUser.readList) {
@@ -68,7 +69,7 @@ const DetailStory = () => {
       }
       catch (error) {
         setStory({})
-        navigate("/not-found")
+         navigate("/not-found")
       }
 
     }
@@ -84,7 +85,7 @@ const DetailStory = () => {
     }, 1500)
 
     try {
-      const { data } = await axios.post(`/story/${slug}/like`, { activeUser }, {
+      const { data } = await axios.post(`/api/story/${slug}/like`, { activeUser }, {
         headers: {
           "Content-Type": "application/json",
           authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -109,7 +110,7 @@ const DetailStory = () => {
 
       try {
 
-        await axios.delete(`/story/${slug}/delete`, {
+        await axios.delete(`/api/story/${slug}/delete`, {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,

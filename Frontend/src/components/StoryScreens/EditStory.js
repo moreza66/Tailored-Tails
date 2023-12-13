@@ -51,7 +51,7 @@ const EditStory = () => {
         formdata.append("previousImage", previousImage)
 
         try {
-            const { data } = await axios.put(`/story/${slug}/edit`, formdata, config)
+            const { data } = await axios.put(`/api/story/${slug}/edit`, formdata, config)
 
             setSuccess('Edit Story successfully ')
 

@@ -28,7 +28,7 @@ const AddComment = ({ setSidebarShowStatus, slug, getStoryComments, activeUser, 
 
             try {
                 setLoading(false)
-                const { data } = await axios.post(`/story/${slug}`, { activeUser })
+                const { data } = await axios.post(`/api/story/${slug}`, { activeUser })
                 setStoryUser(data.data.author.username)
 
             }
@@ -47,7 +47,7 @@ const AddComment = ({ setSidebarShowStatus, slug, getStoryComments, activeUser, 
 
         e.preventDefault();
         try {
-            await axios.post(`/comment/${slug}/addComment`, { content, star }, {
+            await axios.post(`/api/comment/${slug}/addComment`, { content, star }, {
                 headers: {
                     "Content-Type": "application/json",
                     authorization: `Bearer ${localStorage.getItem("authToken")}`,
