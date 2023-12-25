@@ -13,7 +13,7 @@ const ForgotPasswordScreen = () => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/forgotpassword",
+        `https://url.vercel.app`+`/api/auth/forgotpassword`,
         { email }
       );
 

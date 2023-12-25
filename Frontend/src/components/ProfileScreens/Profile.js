@@ -29,7 +29,8 @@ const Profile = () => {
             setLoading(true)
 
             try {
-                const { data } = await axios.get("/api/user/profile", config)
+                const { data } = await axios.get(
+                    `https://url.vercel.app`+`/api/user/profile`, config)
 
                 setUser(data.data)
 

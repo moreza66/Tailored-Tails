@@ -27,7 +27,8 @@ const EditProfile = () => {
         formdata.append("photo", photo)
 
         try {
-            const { data } = await axios.post("/api/user/editProfile", formdata, config)
+            const { data } = await axios.post(
+                `https://url.vercel.app`+`/api/user/editProfile`, formdata, config)
 
             setSuccess('Edit Profile successfully ')
             setTimeout(() => {

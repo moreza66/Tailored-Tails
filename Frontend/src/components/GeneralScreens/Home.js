@@ -25,7 +25,8 @@ const Home = () => {
       setLoading(true)
       try {
 
-        const { data } = await axios.get(`/api/story/getAllStories?search=${searchKey || ""}&page=${page}`)
+        const { data } = await axios.get(
+          `https://url.vercel.app`+`/api/story/getAllStories?search=${searchKey || ""}&page=${page}`)
 
         if (searchKey) {
           navigate({
