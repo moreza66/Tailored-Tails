@@ -120,7 +120,7 @@ const EditProfile = () => {
                                     <div class="absolute">
                                         Currently Image
                                     </div>
-                                    <img src={`http://localhost:5001/userPhotos/${previousPhoto}`} alt="userPhoto" />
+                                    <img src={`https://url.vercel.app/userPhotos/${previousPhoto}`} alt="userPhoto" />
                                 </div>
 
                             </div>

@@ -110,7 +110,7 @@ const EditStory = () => {
                                 <div class="absolute">
                                     Currently Image
                                 </div>
-                                <img src={`http://localhost:5001/storyImages/${previousImage}`} alt="storyImage" />
+                                <img src={`https://url.vercel.app/storyImages/${previousImage}`} alt="storyImage" />
                             </div>
                             <div class="StoryImageField">
                                 <AiOutlineUpload />

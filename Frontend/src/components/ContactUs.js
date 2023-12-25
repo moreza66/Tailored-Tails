@@ -14,7 +14,7 @@ const ContactUs = () => {
         setLoading(true);
 
 
-        fetch('http://localhost:5001/api/send-email', {
+        fetch('https://url.vercel.app/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
