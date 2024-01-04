@@ -30,7 +30,7 @@ const Profile = () => {
 
             try {
                 const { data } = await axios.get(
-                    `https://url.vercel.app`+`/api/user/profile`, config)
+                    `/api/user/profile`, config)
 
                 setUser(data.data)
 

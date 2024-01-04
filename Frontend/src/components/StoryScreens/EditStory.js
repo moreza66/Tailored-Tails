@@ -28,7 +28,7 @@ const EditStory = () => {
             setLoading(true)
             try {
                 const { data } = await axios.get(
-                    `https://url.vercel.app`+`/api/story/editStory/${slug}`, config)
+                    `/api/story/editStory/${slug}`, config)
                 setStory(data.data)
                 setTitle(data.data.title)
                 setContent(data.data.content)
@@ -53,7 +53,7 @@ const EditStory = () => {
 
         try {
             const { data } = await axios.put(
-                `https://url.vercel.app`+`/api/story/${slug}/edit`, formdata, config)
+                `/api/story/${slug}/edit`, formdata, config)
 
             setSuccess('Edit Story successfully ')
 
@@ -110,7 +110,7 @@ const EditStory = () => {
                                 <div class="absolute">
                                     Currently Image
                                 </div>
-                                <img src={`https://url.vercel.app/storyImages/${previousImage}`} alt="storyImage" />
+                                <img src={`/storyImages/${previousImage}`} alt="storyImage" />
                             </div>
                             <div class="StoryImageField">
                                 <AiOutlineUpload />

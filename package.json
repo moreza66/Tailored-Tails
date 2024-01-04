@@ -1,0 +1,21 @@
+{
+  "name": "tailored-tails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd Frontend && yarn && yarn build",
+    "start": "cd Backend && yarn && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://aj235711@github.com/aj235711/Tailored-Tails.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aj235711/Tailored-Tails/issues"
+  },
+  "homepage": "https://github.com/aj235711/Tailored-Tails#readme"
+}

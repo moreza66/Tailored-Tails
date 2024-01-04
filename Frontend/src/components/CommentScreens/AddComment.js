@@ -28,9 +28,8 @@ const AddComment = ({ setSidebarShowStatus, slug, getStoryComments, activeUser, 
 
             try {
                 setLoading(false)
-                const { data } = await axios.post(
-                    `https://url.vercel.app`+`/api/story/${slug}`, { activeUser },
-                    )
+                const { data } = await axios.post(`/api/story/${slug}`, { activeUser },
+                )
                 setStoryUser(data.data.author.username)
 
             }

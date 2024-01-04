@@ -19,7 +19,7 @@ const AuthContextProvider = props => {
     const controlAuth = async () => {
       try {
         const { data } = await axios.get(
-          `https://url.vercel.app`, config);
+          ``, config);
         setActiveUser(data.user)
       }
       catch (error) {

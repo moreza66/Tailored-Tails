@@ -23,14 +23,14 @@ const DetailStory = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-   
+
     const getDetailStory = async () => {
       console.log("inside of function 1 ***");
       setLoading(true)
       var activeUser = {}
       try {
         const { data } = await axios.get(
-          `https://url.vercel.app`+`/api/auth/private`, {
+          `/api/auth/private`, {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -47,13 +47,13 @@ const DetailStory = () => {
 
       try {
         const { data } = await axios.post(
-          `https://url.vercel.app`+`/api/story/${slug}`, { activeUser })
+          `/api/story/${slug}`, { activeUser })
         setStory(data.data)
         setLikeStatus(data.likeStatus)
         setLikeCount(data.data.likeCount)
         setStoryLikeUser(data.data.likes)
         setLoading(false)
-    
+
         const story_id = data.data._id;
 
         if (activeUser.readList) {
@@ -71,7 +71,7 @@ const DetailStory = () => {
       }
       catch (error) {
         setStory({})
-         navigate("/not-found")
+        navigate("/not-found")
       }
 
     }
@@ -88,7 +88,7 @@ const DetailStory = () => {
 
     try {
       const { data } = await axios.post(
-        `https://url.vercel.app`+`/api/story/${slug}/like`
+        `/api/story/${slug}/like`
         , { activeUser }, {
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ const DetailStory = () => {
       try {
 
         await axios.delete(
-          `https://url.vercel.app`+`/api/story/${slug}/delete`, {
+          `/api/story/${slug}/delete`, {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -146,7 +146,7 @@ const DetailStory = () => {
     try {
 
       const { data } = await axios.post(
-        `https://url.vercel.app`+`/user/${slug}/addStoryToReadList`, { activeUser }, {
+        `/user/${slug}/addStoryToReadList`, { activeUser }, {
         headers: {
           "Content-Type": "application/json",
           authorization: `Bearer ${localStorage.getItem("authToken")}`,

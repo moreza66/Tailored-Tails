@@ -19,14 +19,13 @@ const CommentItem = ({ comment, activeUser }) => {
 
             const comment_id = comment._id
             try {
-                const { data } = await axios.post(
-                    `https://url.vercel.app`+`/api/comment/${comment_id}/getCommentLikeStatus`, { activeUser },
-                   {
-                    headers: {
-                        "Content-Type": "application/json",
-                        authorization: `Bearer ${localStorage.getItem("authToken")}`,
-                    },
-                })
+                const { data } = await axios.post(`/api/comment/${comment_id}/getCommentLikeStatus`, { activeUser },
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                            authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                        },
+                    })
                 setLikeStatus(data.likeStatus)
             }
             catch (error) {
@@ -52,9 +51,8 @@ const CommentItem = ({ comment, activeUser }) => {
         const comment_id = comment._id
 
         try {
-            const { data } = await axios.post(
-                `https://url.vercel.app`+`/api/comment/${comment_id}/like`,
-                 { activeUser }, {
+            const { data } = await axios.post(`/api/comment/${comment_id}/like`,
+                { activeUser }, {
                 headers: {
                     "Content-Type": "application/json",
                     authorization: `Bearer ${localStorage.getItem("authToken")}`,

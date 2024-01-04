@@ -7,11 +7,9 @@ const IndexRoute = require("./Routers/index")
 const connectDatabase = require("./Helpers/database/connectDatabase")
 const customErrorHandler = require("./Middlewares/Errors/customErrorHandler")
 
-dotenv.config({
-    path: './Config/config.env'
-})
+dotenv.config();
 
-connectDatabase()
+const __dirname__ = path.resolve();
 
 const app = express();
 // app.use(cors(
@@ -31,7 +29,13 @@ app.use(customErrorHandler)
 
 const PORT = process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname__, "../Frontend/build")));
+
+app.get("*", (_, res) => {
+    res.sendFile(path.join(__dirname__, "../Frontend/build/index.html", function (err) {
+        res.status(500).send(err);
+    }))
+})
 
 app.post('/api/send-email', (req, res) => {
     const { name, email, message } = req.body;
@@ -69,14 +73,12 @@ app.post('/api/send-email', (req, res) => {
     });
 });
 
-const server = app.listen(PORT, () => {
-
-    console.log(`Server running on port  ${PORT} : ${process.env.NODE_ENV}`)
-
-})
+connectDatabase().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server running on port  ${PORT} : ${process.env.NODE_ENV}`)
+    })
+});
 
 process.on("unhandledRejection", (err, promise) => {
     console.log(`Logged Error : ${err}`)
-
-    server.close(() => process.exit(1))
 })
