@@ -36,8 +36,12 @@ Tailored-Tails is a dynamic MERN (MongoDB, Express, React, Node.js) application 
    git clone https://github.com/moreza66/Tailored-Tails.git
    cd Tailored-Tails
 
-2. **Set Up Environment Variables:
+2. **Set Up Environment Variables**:
 In the backend directory, create a .env file with the following configuration:
+MONGODB_URI=your_mongo_database_uri
+JWT_SECRET=your_jwt_secret_key
+PORT=5000
+
 
 
 
