@@ -46,11 +46,5 @@ npm install
 
 
 
-### For the frontend:
-```bash
-cd ../frontend
-npm install
-
-
 
 
