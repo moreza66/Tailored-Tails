@@ -17,8 +17,7 @@ const CommentSidebar = ({ slug, sidebarShowStatus, setSidebarShowStatus, activeU
 
   const getStoryComments = async () => {
     try {
-      const { data } = await axios.get(
-        `https://url.vercel.app`+  `/api/comment/${slug}/getAllComment`)
+      const { data } = await axios.get(`/api/comment/${slug}/getAllComment`)
       setCommentList(data.data)
       setCount(data.count)
     }

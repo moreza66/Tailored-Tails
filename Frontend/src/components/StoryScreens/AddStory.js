@@ -36,8 +36,7 @@ const AddStory = () => {
         formdata.append("content", content)
 
         try {
-            const { data } = await axios.post(
-                `https://url.vercel.app`+`/api/story/addstory`, formdata, config)
+            const { data } = await axios.post("/api/story/addstory", formdata, config)
             setSuccess('Add story successfully ')
 
             clearInputs()

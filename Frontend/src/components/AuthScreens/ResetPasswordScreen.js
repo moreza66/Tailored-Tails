@@ -25,7 +25,7 @@ const ResetPasswordScreen = () => {
 
     try {
       const { data } = await axios.put(
-        `https://url.vercel.app`+`/api/auth/resetpassword?resetPasswordToken=${token}`,
+        `/api/auth/resetpassword?resetPasswordToken=${token}`,
         {
           password,
         }

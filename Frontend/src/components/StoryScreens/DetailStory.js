@@ -29,8 +29,7 @@ const DetailStory = () => {
       setLoading(true)
       var activeUser = {}
       try {
-        const { data } = await axios.get(
-          `https://url.vercel.app`+`/api/auth/private`, {
+        const { data } = await axios.get("/api/auth/private", {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -46,8 +45,7 @@ const DetailStory = () => {
       }
 
       try {
-        const { data } = await axios.post(
-          `https://url.vercel.app`+`/api/story/${slug}`, { activeUser })
+        const { data } = await axios.post(`/api/story/${slug}`, { activeUser })
         setStory(data.data)
         setLikeStatus(data.likeStatus)
         setLikeCount(data.data.likeCount)
@@ -87,9 +85,7 @@ const DetailStory = () => {
     }, 1500)
 
     try {
-      const { data } = await axios.post(
-        `https://url.vercel.app`+`/api/story/${slug}/like`
-        , { activeUser }, {
+      const { data } = await axios.post(`/api/story/${slug}/like`, { activeUser }, {
         headers: {
           "Content-Type": "application/json",
           authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -114,8 +110,7 @@ const DetailStory = () => {
 
       try {
 
-        await axios.delete(
-          `https://url.vercel.app`+`/api/story/${slug}/delete`, {
+        await axios.delete(`/api/story/${slug}/delete`, {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -145,8 +140,7 @@ const DetailStory = () => {
 
     try {
 
-      const { data } = await axios.post(
-        `https://url.vercel.app`+`/user/${slug}/addStoryToReadList`, { activeUser }, {
+      const { data } = await axios.post(`/user/${slug}/addStoryToReadList`, { activeUser }, {
         headers: {
           "Content-Type": "application/json",
           authorization: `Bearer ${localStorage.getItem("authToken")}`,

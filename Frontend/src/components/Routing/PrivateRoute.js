@@ -21,8 +21,7 @@ const PrivateRoute =( ) => {
             },
         };
         try {
-            const { data } = await axios.get(
-                `https://url.vercel.app`+`/api/auth/private`, config); 
+            const { data } = await axios.get("/api/auth/private", config); 
 
             setAuth(true)
             setActiveUser(data.user)

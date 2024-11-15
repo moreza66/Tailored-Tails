@@ -21,8 +21,7 @@ const ReadListPage = () => {
             setLoading(true)
 
             try {
-                const { data } = await (await axios.get(
-                    `https://url.vercel.app`+`/api/user/readList`, config)).data
+                const { data } = await (await axios.get(`/api/user/readList`, config)).data
                 setReadList(data)
                 setLoading(false)
             }
