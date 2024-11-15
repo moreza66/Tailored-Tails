@@ -11,3 +11,8 @@ Tailored-Tails is a dynamic MERN (MongoDB, Express, React, Node.js) application 
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+
+## About the Project
+
+**Tailored-Tails** was created to allow users to interact with customized content through a modern, full-stack web application. Users can sign up, log in, and contribute content, which can be rated by other users. This project is intended as a demonstration of a complete MERN stack application with secure authentication and smooth user interactions.
+
