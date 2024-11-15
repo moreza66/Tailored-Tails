@@ -42,6 +42,11 @@ In the backend directory, create a .env file with the following configuration:
 MONGODB_URI=your_mongo_database_uri
 JWT_SECRET=your_jwt_secret_key
 PORT=5000
+3. **Run the Application**:
+Start the backend server:
+```bash
+cd backend
+npm start
 
 
 
