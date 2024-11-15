@@ -43,11 +43,13 @@ In the backend directory, create a .env file with the following configuration:
    JWT_SECRET=your_jwt_secret_key
    PORT=5000
 
-3.**Run the Application**:
-Start the backend server:
-```bash
-cd backend
-npm start
+3. **Run the Application**:  
+   Start the backend server:
+
+   ```bash
+   cd backend
+   npm start
+
 Start the frontend server:
 ```bash
 cd frontend
