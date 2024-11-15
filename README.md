@@ -52,9 +52,11 @@ In the backend directory, create a .env file with the following configuration:
 
 
 Start the frontend server:
+
 ```bash
 cd frontend
 npm start
+
 
 
 5. **Open the Application**:  
