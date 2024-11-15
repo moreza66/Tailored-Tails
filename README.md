@@ -45,5 +45,8 @@ cd backend
 npm install
 
 ### For the frontend:
+cd ../frontend
+npm install
+
 
 
