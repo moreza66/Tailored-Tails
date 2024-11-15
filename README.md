@@ -35,7 +35,6 @@ Tailored-Tails is a dynamic MERN (MongoDB, Express, React, Node.js) application 
    ```bash
    git clone https://github.com/moreza66/Tailored-Tails.git
    cd Tailored-Tails
-   ## Install Dependencies
 
 ## Install Dependencies
 
