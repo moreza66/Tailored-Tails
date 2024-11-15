@@ -48,6 +48,10 @@ Start the backend server:
 ```bash
 cd backend
 npm start
+Start the frontend server:
+```bash
+cd frontend
+npm start
 
    
 
