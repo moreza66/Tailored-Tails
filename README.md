@@ -29,4 +29,18 @@ Tailored-Tails is a dynamic MERN (MongoDB, Express, React, Node.js) application 
 - **Authentication**: JWT (JSON Web Tokens)
 - **Styling**: CSS/SCSS or styled-components (specify if using any CSS framework)
 - **Other Tools**: Docker, Jest (for testing)
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/moreza66/Tailored-Tails.git
+   cd Tailored-Tails
+   ## Install Dependencies
+
+### For the backend:
+```bash
+cd backend
+npm install
+
+
 
