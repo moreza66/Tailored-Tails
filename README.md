@@ -55,7 +55,12 @@ Start the frontend server:
 cd frontend
 npm start
 
-   
+ 5. **Open the Application**  
+   Once both servers are running, you can access the app at [http://localhost:3000](http://localhost:3000).
+
+```vbnet
+' Copy code
+  
 
 
 
